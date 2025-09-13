@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Универсальный цифровой мультитул</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #ff7b00 0%, #ff5500 100%);
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(255, 123, 0, 0.2);
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .product-info {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+        
+        .product-title {
+            font-size: 2.2rem;
+            color: #ff7b00;
+            margin-bottom: 20px;
+        }
+        
+        .product-description {
+            color: #666;
+            margin: 0 auto 30px;
+            max-width: 800px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .feature {
+            background: #fff8f0;
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid #ffe0c2;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 123, 0, 0.1);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #ff7b00;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            color: #ff7b00;
+            margin-bottom: 10px;
+        }
+        
+        .marketplaces {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .marketplaces-title {
+            font-size: 2rem;
+            color: #ff7b00;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .marketplaces-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #ff7b00;
+            border-radius: 2px;
+        }
+        
+        .marketplace-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .marketplace-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 123, 0, 0.1);
+            border: 2px solid #ffe0c2;
+        }
+        
+        .marketplace-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 123, 0, 0.15);
+        }
+        
+        .marketplace-logo {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff7b00;
+        }
+        
+        .marketplace-name {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ff7b00;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff7b00;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(255, 123, 0, 0.25);
+        }
+        
+        .btn:hover {
+            background: #ff5500;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 123, 0, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            margin-top: 50px;
+            border-top: 2px solid #ffe0c2;
+            background: #fff8f0;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            .marketplace-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .product-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Универсальный мультитул</div>
+            <p class="tagline">Исследуйте цифровой мир с помощью современного портативного устройства</p>
+        </header>
+        
+        <section class="product-info">
+            <h2 class="product-title">Цифровой мультитул нового поколения</h2>
+            <p class="product-description">
+                Это портативное устройство для тестирования цифровых систем. 
+                С его помощью вы можете взаимодействовать с различными протоколами 
+                беспроводной связи, RFID-системами и другими электронными устройствами.
+            </p>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Беспроводные технологии</h3>
+                    <p>Работа с RFID, NFC, Bluetooth, Infrared</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-code"></i>
+                    <h3>Открытый код</h3>
+                    <p>Открытая платформа для разработки</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Портативность</h3>
+                    <p>Компактный размер и долгая работа от батареи</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-plug"></i>
+                    <h3>Совместимость</h3>
+                    <p>Поддержка множества протоколов и устройств</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="marketplaces">
+            <h2 class="marketplaces-title">Купить на маркетплейсах</h2>
+            
+            <div class="marketplace-cards">
+                <div class="marketplace-card">
+                    <div class="marketplace-logo">OZON</div>
+                    <h3 class="marketplace-name">Ozon</h3>
+                    <p>Быстрая доставка по всей России</p>
+                    <a href="https://clck.ru/3PB5sa" class="btn">Купить на Ozon</a>
+                </div>
+                
+                <div class="marketplace-card">
+                    <div class="marketplace-logo">Яндекс</div>
+                    <h3 class="marketplace-name">Яндекс Маркет</h3>
+                    <p>Гарантия качества и надежности</p>
+                    <a href="https://clck.ru/3PB5uV" class="btn">Купить на Яндекс</a>
+                </div>
+                
+                <div class="marketplace-card">
+                    <div class="marketplace-logo">WB</div>
+                    <h3 class="marketplace-name">Wildberries</h3>
+                    <p>Удобная доставка и возврат</p>
+                    <a href="https://www.wildberries.ru/catalog/360481683/detail.aspx?size=529377426" class="btn">Купить на WB</a>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2023 Универсальный цифровой мультитул. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html>
